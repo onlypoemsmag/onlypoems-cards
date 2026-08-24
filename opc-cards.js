@@ -1,7 +1,7 @@
 (function(){
   "use strict";
   if(window.__opcCards) return; window.__opcCards=true;var __opcS=document.createElement("style");__opcS.textContent=".opc-share{margin:40px 0 0;display:flex;align-self:flex-start;width:fit-content;align-items:center;background:none;border:0;cursor:pointer;padding:6px 0;color:#0153db;font-family:\"basic-sans\",system-ui,sans-serif;text-align:left} .opc-share .l{font-size:12.5px;text-transform:uppercase;letter-spacing:.22em;border-bottom:1.5px solid transparent;padding-bottom:2px;transition:border-color .18s} .opc-share:hover .l{border-color:#0153db} #opc-chip{position:absolute;z-index:99998;display:none;font-family:\"basic-sans\",system-ui,sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:.18em;background:#0a090c;color:#fefcff;padding:8px 15px;border-radius:11px;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.22);white-space:nowrap;user-select:none} #opc-chip:after{content:\"\";position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);border:6px solid transparent;border-top-color:#0a090c;border-bottom:0} #opc-overlay{position:fixed;inset:0;z-index:99999;display:none;background:rgba(20,18,22,.55);backdrop-filter:blur(3px);align-items:center;justify-content:center;padding:22px} #opc-overlay *{box-sizing:border-box} .opc-modal{background:#fefcff;border-radius:16px;max-width:560px;width:100%;padding:20px;box-shadow:0 24px 70px rgba(0,0,0,.4);max-height:94vh;overflow:auto;font-family:\"basic-sans\",system-ui,sans-serif} .opc-opts{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;align-items:center;margin-bottom:16px} .opc-grp{display:flex;align-items:center;gap:8px} .opc-grp>span{font-size:10.5px;text-transform:uppercase;letter-spacing:.14em;color:#6b6b70} .opc-seg{display:inline-flex;border:1px solid #e7e3ea;border-radius:11px;overflow:hidden} .opc-seg button{font-family:inherit;font-size:12.5px;border:0;background:transparent;padding:7px 14px;cursor:pointer;color:#6b6b70} .opc-seg button.on{background:#0a090c;color:#fefcff} .opc-pvwrap{display:flex;justify-content:center;margin:4px 0 12px} #opc-pv{max-width:100%;max-height:54vh;height:auto;width:auto;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.28)} #opc-nav{display:none;align-items:center;justify-content:center;gap:16px;margin:0 0 14px} #opc-nav .n{font-size:12px;letter-spacing:.1em;color:#6b6b70} .opc-pgbtn{font-family:inherit;width:34px;height:34px;border:1px solid #e7e3ea;background:#fefcff;border-radius:11px;cursor:pointer;font-size:16px;color:#0a090c} .opc-pgbtn:disabled{opacity:.35;cursor:default} .opc-acts{display:flex;gap:10px;justify-content:center;flex-wrap:wrap} .opc-btn{font-family:inherit;font-size:14px;display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:11px;cursor:pointer;border:1px solid #0a090c;background:#0a090c;color:#fefcff} .opc-btn.ghost{background:transparent;color:#0a090c} .opc-x{float:right;margin:-6px -4px 0 0;border:0;background:transparent;font-size:22px;line-height:1;cursor:pointer;color:#6b6b70}";(document.head||document.documentElement).appendChild(__opcS);
-  try{ console.log("%c[ONLY POEMS] share-cards v18 loaded","color:#0153db;font-weight:bold"); }catch(e){}
+  try{ console.log("%c[ONLY POEMS] share-cards v19 loaded","color:#0153db;font-weight:bold"); }catch(e){}
 
   var STACK="data:image/png;base64,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";
   var THEMES={light:{bg:"#fefcff",ink:"#0a090c",sub:"#5b5661"},dark:{bg:"#000000",ink:"#fefcff",sub:"#b7b3bd"}};
@@ -15,11 +15,49 @@
 
   var logo=new Image(); logo.src=STACK; var logoReady=new Promise(function(r){logo.onload=r;logo.onerror=r;});
   var fontsReady=(function(){try{return Promise.all([
-    document.fonts.load('400 1em "calluna"'),document.fonts.load('italic 400 1em "calluna"'),
+    document.fonts.load('400 1em "calluna"'),document.fonts.load('italic 400 1em "calluna"'),document.fonts.load('700 1em "calluna"'),document.fonts.load('italic 700 1em "calluna"'),
     document.fonts.load('700 1em "cofo-raffine"'),document.fonts.load('400 1em "basic-sans"'),document.fonts.load('500 1em "basic-sans"')
   ]).then(function(){return document.fonts.ready;}).catch(function(){});}catch(e){return Promise.resolve();}})();
 
   function wrap(ctx,text,maxW){ if(!text||!text.trim())return [""]; var ws=text.split(/\s+/),out=[],c=""; for(var i=0;i<ws.length;i++){var t=c?c+" "+ws[i]:ws[i]; if(ctx.measureText(t).width<=maxW||!c)c=t; else{out.push(c);c=ws[i];}} if(c)out.push(c); return out; }
+  /* v19: styled-run text. A line is a list of runs [{t,it,b,sup}] so inline italics, bold and
+     superscripts survive onto the card. */
+  function fRun(s,it,b){ return (it?"italic ":"")+(b?"700 ":"400 ")+s+'px "calluna",Georgia,serif'; }
+  function wFont(fs,f){ return fRun(f.sup?Math.max(Math.round(fs*0.62),12):fs, f.it, f.b); }
+  function sameSty(a,c){ return a.it===c.it&&a.b===c.b&&a.sup===c.sup; }
+  function tokenize(runs){ var toks=[],cur=null; runs.forEach(function(r){ r.t.split(/(\s+)/).forEach(function(p){ if(!p) return; if(/^\s+$/.test(p)){ cur=null; } else { if(!cur){cur={frags:[]};toks.push(cur);} var lf=cur.frags[cur.frags.length-1]; if(lf&&sameSty(lf,r)) lf.t+=p; else cur.frags.push({t:p,it:r.it,b:r.b,sup:r.sup}); } }); }); return toks; }
+  function tokW(ctx,tok,fs){ var w=0; tok.frags.forEach(function(f){ ctx.font=wFont(fs,f); w+=ctx.measureText(f.t).width; }); return w; }
+  function wrapRuns(ctx,runs,maxW,fs){ var toks=tokenize(runs); if(!toks.length) return []; ctx.font=fBody(fs); var spaceW=ctx.measureText(" ").width; var out=[],line=[],w=0; toks.forEach(function(tk){ var tw=tokW(ctx,tk,fs); var nw=line.length?w+spaceW+tw:tw; if(line.length&&nw>maxW){ out.push({words:line}); line=[tk]; w=tw; } else { line.push(tk); w=nw; } }); if(line.length) out.push({words:line}); return out; }
+  /* Walk a DOM subtree into lines of styled runs. Splits on <br> at ANY depth (v18 only saw
+     direct children, so a <br> inside an <em> silently fused two lines) and around nested
+     block elements; tracks italic from every ancestor, so inline <em>/<i> runs are kept. */
+  function runsFromNode(root,baseIt){
+    var BLK=/^(P|DIV|H1|H2|H3|H4|H5|H6|BLOCKQUOTE|LI|PRE|UL|OL)$/;
+    var lines=[],cur=[];
+    function isIt(el){ if(/^(EM|I)$/.test(el.tagName)) return true; try{ return ((getComputedStyle(el).fontStyle)||"").indexOf("italic")===0; }catch(e){ return false; } }
+    function isB(el){ if(/^(STRONG|B)$/.test(el.tagName)) return true; try{ return (parseInt(getComputedStyle(el).fontWeight,10)||400)>=600; }catch(e){ return false; } }
+    function flush(){ lines.push(cur); cur=[]; }
+    function txt(t,sty){ t.split(/[\u2028\u2029]/).forEach(function(p,i){ if(i) flush(); if(p) cur.push({t:p,it:sty.it,b:sty.b,sup:sty.sup}); }); }   // U+2028/29 are line breaks too
+    (function walk(node,sty){
+      [].slice.call(node.childNodes).forEach(function(n){
+        if(n.nodeType===3){ if(n.textContent) txt(n.textContent,sty); return; }
+        if(n.nodeType!==1) return;
+        if(n.tagName==="BR"){ flush(); return; }
+        var blk=BLK.test(n.tagName);
+        if(blk&&cur.length) flush();
+        walk(n,{it:sty.it||isIt(n), b:sty.b||isB(n), sup:sty.sup||n.tagName==="SUP"});
+        if(blk&&cur.length) flush();
+      });
+    })(root,(function(){ var el=(root.nodeType===1&&root.tagName!=="DIV")?root:null; return {it:!!baseIt||(el?isIt(el):false), b:el?isB(el):false, sup:false}; })());
+    flush();
+    return lines.map(function(rs){
+      // NBSP -> space; kill true invisibles; strip zero-width joiners ONLY at whitespace/edges
+      // (Webflow editor litter) so emoji ZWJ sequences inside words survive.
+      var m=[]; rs.forEach(function(r){ var t=r.t.replace(/\u00a0/g," ").replace(/[\u200b\u200c\u2060\ufeff]/g,"").replace(/(^|\s)\u200d+/g,"$1").replace(/\u200d+(?=\s|$)/g,""); if(!t) return; var L=m[m.length-1]; if(L&&sameSty(L,r)) L.t+=t; else m.push({t:t,it:r.it,b:r.b,sup:r.sup}); });
+      while(m.length){ m[m.length-1].t=m[m.length-1].t.replace(/\s+$/,""); if(m[m.length-1].t) break; m.pop(); }
+      return {t:m.map(function(r){return r.t;}).join(""),runs:m};
+    });
+  }
   function tintLogo(ctx,x,y,h,color){ var w=h*(logo.naturalWidth/logo.naturalHeight||0.946),s=2; var off=document.createElement("canvas");off.width=w*s;off.height=h*s; var o=off.getContext("2d");o.scale(s,s); o.drawImage(logo,0,0,w,h);o.globalCompositeOperation="source-in";o.fillStyle=color;o.fillRect(0,0,w,h); ctx.drawImage(off,x,y,w,h); }
 
   function GEO(f){return f==="9x16"?[1080,1920]:[1080,1350];}
@@ -40,12 +78,12 @@
         o.lines.forEach(function(l){
           var txt=l.t;
           if(!txt.trim()){ s.push({spacer:gap}); return; }
-          if(o.prose){ ctx.font=fBody(fs); var vp=wrap(ctx,txt.trim(),L.maxW); vp.forEach(function(t,i){ s.push({text:t,words:t.split(" "),justify:i<vp.length-1,font:fBody(fs),color:T.ink,lh:lh,x:0,jw:L.maxW}); }); return; }
-          if(l.it){ ctx.font=fItal(epiFs); wrap(ctx,txt.trim(),L.maxW-tab).forEach(function(t,i){ s.push({text:t,font:fItal(epiFs),color:T.sub,lh:epiFs*1.5,x:tab+(i>0?L.hang:0)}); }); return; }   // epigraph: poet-name size, italic, tab-indented
-          ctx.font=fBody(fs);
-          var lead=txt.match(/^ */)[0].length, indent=lead*spaceW, content=txt.slice(lead);
+          var runs=(l.runs&&l.runs.length)?l.runs:[{t:txt,it:!!l.it,b:false,sup:false}];
+          if(o.prose){ wrapRuns(ctx,runs,L.maxW,fs).forEach(function(seg,i,arr){ s.push({words:seg.words,justify:i<arr.length-1,fs:fs,color:T.ink,lh:lh,x:0,jw:L.maxW}); }); return; }
+          if(l.it){ wrapRuns(ctx,runs.map(function(r){return {t:r.t,it:true,b:!!r.b,sup:!!r.sup};}),L.maxW-tab,epiFs).forEach(function(seg,i){ s.push({words:seg.words,fs:epiFs,color:T.sub,lh:epiFs*1.5,x:tab+(i>0?L.hang:0)}); }); return; }   // epigraph: poet-name size, italic, tab-indented
+          var lead=txt.match(/^ */)[0].length, indent=lead*spaceW;
           var avail=Math.max(L.maxW-indent, L.maxW*0.45);
-          wrap(ctx,content,avail).forEach(function(t,i){ s.push({text:t,font:fBody(fs),color:T.ink,lh:lh,x:indent+(i>0?L.hang:0)}); });
+          wrapRuns(ctx,runs,avail,fs).forEach(function(seg,i){ s.push({words:seg.words,fs:fs,color:T.ink,lh:lh,x:indent+(i>0?L.hang:0)}); });
         }); return s; }
     function attr(fs){ var s=[],a=Math.min(Math.max(fs*0.42,23),31); s.push({spacer:fs*1.1}); if(o.poet) s.push({text:"— "+o.poet,font:fPoet(a),color:acc,lh:a*1.42,x:0}); if(o.title && !o.interview) s.push({text:'from “'+o.title+'”',font:fItal(a*0.96),color:T.sub,lh:a*1.42,x:0}); return s; }
     var fs;
@@ -62,9 +100,12 @@
     canvas.width=W*sc;canvas.height=H*sc; var ctx=canvas.getContext("2d"); ctx.setTransform(sc,0,0,sc,0,0);
     ctx.fillStyle=T.bg; ctx.fillRect(0,0,W,H);
     var y=L.areaTop+(pl.centered?Math.max(0,(L.availH-measure(segs))/2):0); ctx.textAlign="left"; ctx.textBaseline="alphabetic";
-    segs.forEach(function(s){ if(s.spacer!=null){y+=s.spacer;return;} ctx.font=s.font; ctx.fillStyle=s.color; ctx.letterSpacing="0px"; y+=s.lh*0.78;
-      if(s.justify&&s.words&&s.words.length>1){ var wsum=0; s.words.forEach(function(w){wsum+=ctx.measureText(w).width;}); var gp=(s.jw-wsum)/(s.words.length-1),cx=L.padX; s.words.forEach(function(w){ctx.fillText(w,cx,y);cx+=ctx.measureText(w).width+gp;}); }
-      else ctx.fillText(s.text,L.padX+(s.x||0),y); y+=s.lh*0.22; });
+    segs.forEach(function(s){ if(s.spacer!=null){y+=s.spacer;return;} ctx.fillStyle=s.color; ctx.letterSpacing="0px"; y+=s.lh*0.78;
+      if(s.words){ var fs=s.fs; ctx.font=fBody(fs); var spaceW=ctx.measureText(" ").width; var cx=L.padX+(s.x||0);
+        if(s.justify&&s.words.length>1){ var wsum=0; s.words.forEach(function(tk){wsum+=tokW(ctx,tk,fs);}); var gp=(s.jw-wsum)/(s.words.length-1); cx=L.padX;
+          s.words.forEach(function(tk){ tk.frags.forEach(function(f){ ctx.font=wFont(fs,f); ctx.fillText(f.t,cx,y-(f.sup?fs*0.33:0)); cx+=ctx.measureText(f.t).width; }); cx+=gp; }); }
+        else s.words.forEach(function(tk,i){ if(i)cx+=spaceW; tk.frags.forEach(function(f){ ctx.font=wFont(fs,f); ctx.fillText(f.t,cx,y-(f.sup?fs*0.33:0)); cx+=ctx.measureText(f.t).width; }); }); }
+      else { ctx.font=s.font; ctx.fillText(s.text,L.padX+(s.x||0),y); } y+=s.lh*0.22; });
     var lineY=L.lineY, lh2=64, lw=lh2*(logo.naturalWidth/logo.naturalHeight||0.946);
     tintLogo(ctx,W-L.padX-lw,lineY+22,lh2,acc);
     if(pl.pages.length>1){ ctx.textAlign="left"; ctx.font='500 19px "'+UI+'",sans-serif'; ctx.globalAlpha=0.55; ctx.fillStyle=acc; ctx.fillText((idx+1)+" / "+pl.pages.length,L.padX,lineY+22+lh2*0.6); ctx.globalAlpha=1; }
@@ -82,21 +123,23 @@
   }
   function bodyEl(){ return [].slice.call(document.querySelectorAll(".w-richtext")).filter(function(el){ return el.getClientRects().length && !el.closest('nav,.w-nav,footer,.footer,[class*="footer"]'); })[0]; }
   function readPoem(rt){
-    var BLOCK=/^(P|H1|H2|H3|H4|H5|H6|BLOCKQUOTE|LI|PRE)$/;
-    var kids=[].slice.call(rt.children).filter(function(c){return BLOCK.test(c.tagName);});
-    var brCount=rt.querySelectorAll("br").length;
+    var BLOCK=/^(P|H1|H2|H3|H4|H5|H6|BLOCKQUOTE|LI|PRE|UL|OL)$/;
+    var kids=[]; [].slice.call(rt.children).forEach(function(c){ if(!BLOCK.test(c.tagName)) return; if(/^(UL|OL)$/.test(c.tagName)) kids=kids.concat([].slice.call(c.children).filter(function(li){return li.tagName==="LI";})); else kids.push(c); });
+    // count only MEANINGFUL <br>s (something visible follows them in their block) — a trailing
+    // <br>+zero-width the editor leaves at a paragraph's end must not veto prose detection
+    var brCount=0; kids.forEach(function(k){ [].slice.call(k.querySelectorAll("br")).forEach(function(br){ try{ var r=document.createRange(); r.selectNodeContents(k); r.setStartAfter(br); if(r.toString().replace(/[\u200b-\u200d\u2060\ufeff\u00a0\s]/g,"").length) brCount++; }catch(e){ brCount++; } }); });
     var ne=kids.filter(function(k){return k.textContent.trim();});
     var avg=ne.length?ne.reduce(function(a,k){return a+k.textContent.trim().length;},0)/ne.length:0;
     var prose=brCount===0&&avg>=120, linePerBlock=brCount===0&&avg<70;
-    var lines=[]; function clean(s){return s.replace(/ /g," ").replace(/\s+$/,"");}
-    function gap(){ if(lines.length&&lines[lines.length-1].t!=="") lines.push({t:"",it:false}); }
-    function push(t,it){ lines.push({t:clean(t),it:!!it}); }
+    var lines=[];
+    function gap(){ if(lines.length&&lines[lines.length-1].t!=="") lines.push({t:"",runs:[],it:false}); }
     kids.forEach(function(b){
       var txt=b.textContent.trim();
       if(!txt){ gap(); return; }
       if(!linePerBlock) gap();
-      var it=false; try{ it=((getComputedStyle(b).fontStyle||"").indexOf("italic")===0)||/^(EM|I)$/.test((b.firstElementChild||{}).tagName||""); }catch(e){}
-      var cur=""; [].slice.call(b.childNodes).forEach(function(n){ if(n.nodeType===1&&n.tagName==="BR"){ push(cur,it); cur=""; } else { cur+=(n.textContent||""); } }); push(cur,it);
+      var bl=runsFromNode(b,false);
+      var allIt=true; bl.forEach(function(l){ l.runs.forEach(function(r){ if(r.t.trim()&&!r.it) allIt=false; }); });   // whole block italic → epigraph
+      bl.forEach(function(l){ lines.push({t:l.t,runs:l.runs,it:allIt&&!!l.t.trim()}); });
     });
     while(lines.length&&!lines[0].t) lines.shift();
     while(lines.length&&!lines[lines.length-1].t) lines.pop();
@@ -174,7 +217,7 @@
         var cs=[].slice.call(sc.querySelectorAll(".tag-poems_heading, .author_poems_text, .random-poem"));
         for(var i=0;i<cs.length;i++){ var c=cs[i]; if(c===pe||(pe&&c.contains(pe))||c.matches(".random-poem-poet,.random-poet,.tags-poet-name")) continue; var t=c.textContent.trim().replace(/\s+/g," "); if(t&&t.length<200&&t.toLowerCase()!==(poet||"").toLowerCase()){ title=t; break; } } }
       if(!title) title=(poems.length>1?titleFor(rt):(info.title||titleFor(rt)))||info.title||titleFor(rt); return {title:title, poet:poet}; }
-    function poemEls(){ var e=[].slice.call(document.querySelectorAll(POEM_SEL)).filter(function(el){return el.getClientRects().length&&isContent(el);}); if(e.length) return e; var _min=_pure?1:60; return [].slice.call(document.querySelectorAll(".w-richtext")).filter(function(el){ return el.getClientRects().length&&isContent(el)&&el.textContent.trim().length>=_min&&!/\bnote\b/i.test(titleFor(el)); }); }
+    function poemEls(){ var e=[].slice.call(document.querySelectorAll(POEM_SEL)).filter(function(el){return el.getClientRects().length&&isContent(el)&&el.textContent.replace(/[\u200b-\u200d\u2060\ufeff\u00a0\s]/g,"").length;}); if(e.length) return e; var _min=_pure?1:60; return [].slice.call(document.querySelectorAll(".w-richtext")).filter(function(el){ return el.getClientRects().length&&isContent(el)&&el.textContent.trim().length>=_min&&!/\bnote\b/i.test(titleFor(el)); }); }
     function isPoemHost(h){ if(!h||!isContent(h)) return false; if(document.querySelector(POEM_SEL)) return !!(h.matches&&h.matches(POEM_SEL)); var _min=_pure?1:60; return !!(h.classList&&h.classList.contains("w-richtext"))&&h.textContent.trim().length>=_min&&!/\bnote\b/i.test(titleFor(h)); }
     var poems=poemEls();
     var blogVerse=isBlog&&poems.some(function(rt){ var br=rt.querySelectorAll("br").length, blk=rt.querySelectorAll("p,div,h1,h2,h3,li").length||1, ln=br+blk, len=(rt.textContent||"").trim().length; return ln>=3 && (len/ln)<55; });
@@ -187,7 +230,7 @@
     if(isPoemList){ try{ var _wt; var _mo=new MutationObserver(function(){ clearTimeout(_wt); _wt=setTimeout(wire,120); }); _mo.observe(document.body,{childList:true,subtree:true}); }catch(_e){} }
     // highlight-to-share on the poem body; attribution derived per-poem (works for later-loaded poems too)
     var selLines=null,selProse=false,selTitle="",selPoet="";
-    function refresh(){ var sel=window.getSelection(); if(!sel||sel.isCollapsed||!sel.toString().trim()){chip.style.display="none";return;} var h=host(sel.anchorNode); if(!h||h!==host(sel.focusNode)||!isPoemHost(h)){chip.style.display="none";return;} var r=sel.getRangeAt(0).getBoundingClientRect(); var t=sel.toString(); if(t.length>SEL_CAP)t=t.slice(0,SEL_CAP).replace(/\s+\S*$/,"")+"…"; selLines=t.split(/\n/).map(function(x){return {t:x.replace(/ /g," ").replace(/\s+$/,""),it:false};}); selProse=readPoem(h).prose; var d=deriveFor(h); selTitle=d.title; selPoet=d.poet; chip.style.display="block"; chip.style.top=(window.scrollY+r.top-chip.offsetHeight-12)+"px"; chip.style.left=(window.scrollX+r.left+r.width/2-chip.offsetWidth/2)+"px"; }
+    function refresh(){ var sel=window.getSelection(); if(!sel||sel.isCollapsed||!sel.toString().trim()){chip.style.display="none";return;} var h=host(sel.anchorNode); if(!h||h!==host(sel.focusNode)||!isPoemHost(h)){chip.style.display="none";return;} var r=sel.getRangeAt(0).getBoundingClientRect(); selLines=(function(){ try{ var range=sel.getRangeAt(0),div=document.createElement("div"); div.appendChild(range.cloneContents()); var anc=range.commonAncestorContainer; anc=anc.nodeType===1?anc:anc.parentElement; var base=false; try{ base=!!anc&&((((getComputedStyle(anc).fontStyle)||"").indexOf("italic")===0)||!!anc.closest("em,i")); }catch(e){} var ls=runsFromNode(div,base); while(ls.length&&!ls[0].t) ls.shift(); while(ls.length&&!ls[ls.length-1].t) ls.pop(); var tot=0,out=[]; for(var i=0;i<ls.length;i++){ var l=ls[i]; if(tot+l.t.length>SEL_CAP){ var room=SEL_CAP-tot,acc=0,rr=[]; for(var j=0;j<l.runs.length&&acc<room;j++){ var seg=l.runs[j].t.slice(0,room-acc); if(seg){rr.push({t:seg,it:l.runs[j].it});acc+=seg.length;} } if(rr.length){ rr[rr.length-1].t=rr[rr.length-1].t.replace(/\s+\S*$/,"")+"…"; out.push({t:rr.map(function(r){return r.t;}).join(""),runs:rr,it:false}); } break; } tot+=l.t.length; out.push({t:l.t,runs:l.runs,it:false}); } if(out.length) return out; }catch(e){} var t=sel.toString(); if(t.length>SEL_CAP)t=t.slice(0,SEL_CAP).replace(/\s+\S*$/,"")+"…"; return t.split(/\n/).map(function(x){return {t:x.replace(/\u00a0/g," ").replace(/\s+$/,""),it:false};}); })(); selProse=readPoem(h).prose; var d=deriveFor(h); selTitle=d.title; selPoet=d.poet; chip.style.display="block"; chip.style.top=(window.scrollY+r.top-chip.offsetHeight-12)+"px"; chip.style.left=(window.scrollX+r.left+r.width/2-chip.offsetWidth/2)+"px"; }
     document.addEventListener("mouseup",function(){setTimeout(refresh,10);});
     document.addEventListener("touchend",function(){setTimeout(refresh,10);});
     document.addEventListener("selectionchange",function(){ if(window.getSelection().isCollapsed) chip.style.display="none"; });
